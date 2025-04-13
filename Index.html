@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>BitchSwitch</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #111;
+      color: #fff;
+    }
+    button {
+      padding: 1em 2em;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      background: #444;
+      color: white;
+      cursor: pointer;
+    }
+    button.on {
+      background: #e91e63;
+    }
+  </style>
+</head>
+<body>
+  <h1>BitchSwitch</h1>
+  <button id="switch">OFF</button>
+
+  <script>
+    const btn = document.getElementById('switch');
+    let isOn = false;
+
+    btn.addEventListener('click', () => {
+      isOn = !isOn;
+      btn.textContent = isOn ? 'ON' : 'OFF';
+      btn.classList.toggle('on', isOn);
+    });
+  </script>
+</body>
+</html>
